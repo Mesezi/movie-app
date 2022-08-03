@@ -2,7 +2,8 @@
 
 import React from 'react';
 import MovieCard from './movie-card.js'
-import loading from './assets/Pulse-1s-200px.gif'
+import whiteLoading from './assets/pulse white.gif'
+import darkLoading from './assets/black pulse.gif'
 
 
 
@@ -20,12 +21,12 @@ borderBottom: props.mode ? "none":"2px solid black",
    const [searchedKeyword , setSearchedKeyword] = React.useState("")
 
 function Like(data){
-   let likedInStorage = JSON.parse(localStorage.getItem('liked'));
+   let likedInStorage = JSON.parse(sessionStorage.getItem('liked'));
    if(!data.like){
       likedInStorage.unshift(
          {id:data.id,title:data.title,posterImg:data.image,backdropImg:data.backdrop,like:true,overview:data.overview,vote:data.vote,year:data.year,month:data.month})  
       let newLike = JSON.stringify(likedInStorage);
-      localStorage.setItem('liked', newLike);
+      sessionStorage.setItem('liked', newLike);
       search();
    }
    else{
@@ -33,7 +34,7 @@ function Like(data){
          if (item.id === data.id){
           likedInStorage.splice(index, 1);
           let newLike = JSON.stringify(likedInStorage);
-             localStorage.setItem('liked', newLike);
+             sessionStorage.setItem('liked', newLike);
              search();
          }
           }
@@ -43,7 +44,7 @@ function Like(data){
 }
 
 function handler(event){
-   setSearchedTv(<img className='loading' src={loading} />)
+   setSearchedTv(<img alt={props.mode} className='loading' src={props.mode ? whiteLoading : darkLoading} />)
       setSearchedKeyword(event.target.value);
       search();
       }
@@ -55,7 +56,7 @@ function handler(event){
          .then((data)=>{
             data = data.results.slice(0, 8);
             data = data.map(item => ({...item, like: false}))
-         let liked = JSON.parse(localStorage.getItem('liked'));// get liked shows from local storage
+         let liked = JSON.parse(sessionStorage.getItem('liked'));// get liked shows from local storage
          data.forEach(item => {
             for(let i = 0; i < liked.length; i++){// for searched show, loop through liked shows in local storage to check if both id's match
                if(item.id === liked[i].id){

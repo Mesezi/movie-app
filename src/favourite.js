@@ -2,7 +2,7 @@ import React from 'react';
 import FavCard from './favourite-card.js'
 import { modeContext } from './modeContext.js';
 
-export default function(props){
+export default function Favourite (props){
     const mode = React.useContext(modeContext)
 
 let sortItem ={
@@ -15,7 +15,7 @@ let sortItem ={
     const [sortToggle , setSortToggle] = React.useState(false); 
 
     function likedItems (){
-        let likedTvandMovie = JSON.parse(localStorage.getItem('liked'))
+        let likedTvandMovie = JSON.parse(sessionStorage.getItem('liked'))
 
     if(likedTvandMovie.length < 1 ){
         setInStorage("empty") 
@@ -70,12 +70,12 @@ let sortItem ={
         , [sort])
 
     function removeShow(id){
-        let likedInStorage = JSON.parse(localStorage.getItem('liked'));
+        let likedInStorage = JSON.parse(sessionStorage.getItem('liked'));
            likedInStorage.forEach((item, index) => {
               if (item.id === id){
                likedInStorage.splice(index, 1);
                let newLike = JSON.stringify(likedInStorage);
-                  localStorage.setItem('liked', newLike);
+                  sessionStorage.setItem('liked', newLike);
               }
                } 
             )  

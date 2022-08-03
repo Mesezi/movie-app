@@ -2,7 +2,7 @@
 
 import React from 'react';
 import MovieCard from './movie-card.js'
-import { modeContext } from './modeContext.js';
+
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -33,7 +33,7 @@ export default function (props){
  .then(result=>result.json())
  .then((data)=>{
   data = data.results.map(item => ({...item, like: false})) // map through all results and add a like state of false
-        let liked = JSON.parse(localStorage.getItem('liked'));// get liked shows fromlocal storage
+        let liked = JSON.parse(sessionStorage.getItem('liked'));// get liked shows fromlocal storage
      data.forEach(item => {
            for(let i = 0; i < liked.length; i++){// for each tv show in popularTV, loop through liked tv shows in local storage to check if both id's match
               if(item.id === liked[i].id){
@@ -73,12 +73,12 @@ export default function (props){
 
 
 function toggleLike(data){
-   let likedInStorage = JSON.parse(localStorage.getItem('liked'));
+   let likedInStorage = JSON.parse(sessionStorage.getItem('liked'));
    if(!data.like){
       likedInStorage.unshift(
          {id:data.id,title:data.title,posterImg:data.image,backdropImg:data.backdrop,like:true,overview:data.overview,vote:data.vote,year:data.year,month:data.month})  
       let newLike = JSON.stringify(likedInStorage);
-      localStorage.setItem('liked', newLike);
+      sessionStorage.setItem('liked', newLike);
       setShowTracker(prev=> !prev)
    }
    else{
@@ -86,7 +86,7 @@ function toggleLike(data){
          if (item.id === data.id){
           likedInStorage.splice(index, 1);
           let newLike = JSON.stringify(likedInStorage);
-             localStorage.setItem('liked', newLike);
+             sessionStorage.setItem('liked', newLike);
              setShowTracker(prev=> !prev)
          }
           }

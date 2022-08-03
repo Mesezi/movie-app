@@ -43,9 +43,9 @@ let heroBg = {
   }
 
 function likeStorage (){
-    let liked = JSON.parse(localStorage.getItem('liked'));
+    let liked = JSON.parse(sessionStorage.getItem('liked'));
     if (liked === null || undefined){
-      localStorage.setItem('liked', JSON.stringify([]))
+      sessionStorage.setItem('liked', JSON.stringify([]))
     }
 }
 likeStorage();
