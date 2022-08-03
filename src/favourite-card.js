@@ -25,7 +25,7 @@ return(
 <h4 className='mb-1 fw-bold'>{props.title}</h4><span className='fw-bold none'>({props.year})</span> 
 <div className="likeBtn-container d-flex align-items-center justify-content-between"> 
 <span className="vote m-0">{props.vote}</span>
-<span onClick={()=>props.remove(props.id)}><img alt={mode} src={props.like? imgLiked : mode ? imgNotLikedDark : imgNotLikedLight} /></span></div>
+<span onClick={()=>props.remove(props.id)}><img alt={mode.toString()} src={props.like? imgLiked : mode ? imgNotLikedDark : imgNotLikedLight} /></span></div>
    <p>"{props.overview}"</p>
    <span onClick={(e) => popUp(e)}>Read more</span>
 </div>
