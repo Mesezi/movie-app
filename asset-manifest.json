@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.4a960f66.css",
-    "main.js": "/static/js/main.dfdc1fa1.js",
-    "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
-    "static/media/wallpaper2.webp": "/static/media/wallpaper2.101cf3e4b1c5b7425306.webp",
-    "static/media/wallpaper.webp": "/static/media/wallpaper.11784060ee5837034abc.webp",
-    "static/media/Pulse-1s-200px.gif": "/static/media/Pulse-1s-200px.1b3a2d2b80de047de8ac.gif",
-    "index.html": "/index.html",
-    "main.4a960f66.css.map": "/static/css/main.4a960f66.css.map",
-    "main.dfdc1fa1.js.map": "/static/js/main.dfdc1fa1.js.map",
-    "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/movie-app/static/css/main.4a960f66.css",
+    "main.js": "/movie-app/static/js/main.0645cb77.js",
+    "static/js/787.28cb0dcd.chunk.js": "/movie-app/static/js/787.28cb0dcd.chunk.js",
+    "static/media/wallpaper2.webp": "/movie-app/static/media/wallpaper2.101cf3e4b1c5b7425306.webp",
+    "static/media/wallpaper.webp": "/movie-app/static/media/wallpaper.11784060ee5837034abc.webp",
+    "static/media/Pulse-1s-200px.gif": "/movie-app/static/media/Pulse-1s-200px.1b3a2d2b80de047de8ac.gif",
+    "index.html": "/movie-app/index.html",
+    "main.4a960f66.css.map": "/movie-app/static/css/main.4a960f66.css.map",
+    "main.0645cb77.js.map": "/movie-app/static/js/main.0645cb77.js.map",
+    "787.28cb0dcd.chunk.js.map": "/movie-app/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4a960f66.css",
-    "static/js/main.dfdc1fa1.js"
+    "static/js/main.0645cb77.js"
   ]
 }
