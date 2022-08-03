@@ -160,7 +160,7 @@ code {
 
 .pop-up-details{
   position: absolute;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, .1), black, black);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5), black, black);
   width: 100%;
   bottom: 0;
  animation: Slidein 900ms;

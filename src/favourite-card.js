@@ -22,7 +22,7 @@ return(
    <div className='movie--card'>
 <img className='backdrop none' src={props.backdrop} alt={props.title}/>
 <img className='image' src={props.image} alt ={props.title}/>
-<h4 className='mb-1 fw-bold'>{props.title}</h4><span className='fw-bold none'>({props.year})</span> 
+<h4 className='mb-1 fw-bold'>{props.title}</h4><span className='fw-bold year none'>({props.year})</span> 
 <div className="likeBtn-container d-flex align-items-center justify-content-between"> 
 <span className="vote m-0">{props.vote}</span>
 <span onClick={()=>props.remove(props.id)}><img alt={mode.toString()} src={props.like? imgLiked : mode ? imgNotLikedDark : imgNotLikedLight} /></span></div>

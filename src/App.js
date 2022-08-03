@@ -21,9 +21,9 @@ function App() {
   const [popUp , setPopUp] = React.useState('')
 
   const body = document.querySelector("body");
-  let currentHour = new Date();
 
 window.onload= () => {
+  let currentHour = new Date();
   let checkbox = document.querySelector("#checkbox");
   if (currentHour.getHours() >= 18){
     checkbox.checked = true
